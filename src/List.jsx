@@ -1,9 +1,13 @@
 import React from 'react'
 
-export default function List({data=[], renderEmpty}) {
+export default function List({data=[], renderEmpty, renderItem}) {
   if(!data.length) return renderEmpty
 
-  return (
-    <p>{data.length} items</p>
+  return !data.length? renderEmpty : (
+    <ul>
+      {data.map((item, i) => (
+        <li key={i}>{renderItem(item)}</li>
+      ))}
+    </ul>
   )
 }

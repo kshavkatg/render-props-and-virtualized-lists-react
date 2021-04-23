@@ -10,7 +10,15 @@ const tahoe_peaks = [
 
 function App() {
   return (
-    <List data={[1, 2, 3, 4]} renderEmpty={ <p>This list is empty</p> } />
+    <List 
+      data={tahoe_peaks} 
+      renderEmpty={ <p>This list is empty</p> } 
+      renderItem={item => (
+        <>
+          {item.name} - {item.elevation.toLocaleString()}ft
+        </>
+      )}
+    />
   );
 }
 
