@@ -1,4 +1,5 @@
 import React from 'react'
+import List from './List'
 
 const tahoe_peaks = [
   {name: "Freel Peak", elevation: 10891},
@@ -9,13 +10,7 @@ const tahoe_peaks = [
 
 function App() {
   return (
-    <ul>
-      {tahoe_peaks.map((peak, i) => (
-        <li key={i}>
-          {peak.name} - {peak.elevation.toLocaleString()}ft
-        </li>
-      ))}
-    </ul>
+    <List data={[1, 2, 3, 4]} renderEmpty={ <p>This list is empty</p> } />
   );
 }
 
